@@ -1,6 +1,9 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<strong>{{ model.name }}</strong> (total {{ model.publicRepos }})
 
-{{outlet}}
-
+<ul>
+  {{#each model.repositories as |repo|}}
+    <li>
+      {{repo.fullName}} ({{repo.language}}, {{repo.stargazersCount}} stars)
+    </li>
+  {{/each}}
+</ul>
