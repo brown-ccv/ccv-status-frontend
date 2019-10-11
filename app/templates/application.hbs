@@ -1,5 +1,7 @@
 <strong>{{ model.name }}</strong> (total {{ model.publicRepos }})
-
+{{#each model.issues as |issue|}}
+<p>{{issue.title}}</p>
+{{/each}}
 <ul>
   {{#each model.repositories as |repo|}}
     <li>
