@@ -1,4 +1,7 @@
 <div ...attributes class="repo-box {{this.statusClass.border}}" role="alert">
-  <p>{{@name}}</p>
-  <FaIcon @icon="{{this.statusClass.fa}}" class="{{this.statusClass.faColor}}"/>
+  <span>{{@name}}</span>
+  <span class="{{this.statusClass.faColor}}">
+    <FaIcon @icon="{{this.statusClass.fa}}"/>
+    &nbsp;&nbsp;{{this.statusClass.text}}
+  </span>
 </div>

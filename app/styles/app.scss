@@ -4,7 +4,7 @@
   @extend .d-flex;
   @extend .justify-content-center;
   @extend .align-items-center;
-  height: 50vh;
+  height: 30vh;
 }
 
 .repo-box {
@@ -30,4 +30,47 @@
 
 .color-danger {
   color: $red;
+}
+
+.color-warning {
+  color: $yellow;
+}
+
+.color-primary {
+  color: $primary;
+}
+
+
+.incident {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .justify-content-start;
+  @extend .w-50;
+  @extend .border-left;
+  margin-left: 6rem;
+  @extend .my-2;
+}
+
+.navbar {
+  @extend .w-100;
+}
+
+.navbar-nav {
+  @extend .w-100;
+  @extend .d-flex;
+  @extend .justify-content-center;
+}
+
+.navbar-nav > li {
+  float: left;
+  position: relative;
+}
+
+.navbar-nav .active a::after {
+  border-bottom: 2px solid $secondary;
+  bottom: -2px;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
 }
