@@ -9,8 +9,7 @@ export default DS.RESTAdapter.extend({
   headers: computed(function() {
     return {
       'Authorization': `token ${token}`,
-      'User-Agent': user,
-      'Accept': 'application/vnd.github.symmetra-preview+json'
+      'User-Agent': user
     };
   }),
   host: 'https://api.github.com',

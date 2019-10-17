@@ -1,11 +1,22 @@
-<strong>{{ model.name }}</strong> (total {{ model.publicRepos }})
-{{#each model.issues as |issue|}}
-<p>{{issue.title}}</p>
-{{/each}}
+<div class="hero">
+  <h1>{{model.name}}</h1>
+</div>
 <ul>
   {{#each model.repositories as |repo|}}
     <li>
-      {{repo.fullName}} ({{repo.language}}, {{repo.stargazersCount}} stars)
+      {{repo.fullName}}
+      {{#each repo.issues as  |issue| }}
+        {{#each issue.notes as |note|}}
+        {{markdown-to-html note.body}}
+        {{/each}}
+        {{issue.label}}
+        {{markdown-to-html issue.body}}
+        {{#each issue.labels as |label|}}
+          <span style="background-color: #{{label.color}}">{{label.name}}</span>
+        {{/each}}
+      {{markdown-to-html issue.title}}
+      {{/each}}
     </li>
   {{/each}}
 </ul>
+{{outlet}}

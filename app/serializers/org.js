@@ -2,13 +2,11 @@ import ApplicationSerializer from './application';
 
 export default class OrgSerializer extends ApplicationSerializer {
   primaryKey = 'login'
-  normalizeFindRecordResponse(store, type, payload) {
-    console.log(payload.issues_url)
 
+  normalize(type, payload) {
     payload.links = {
-      repositories: payload.repos_url,
-      issues: payload.issues_url
+      repositories: payload.repos_url
     }
-    return super.normalizeFindRecordResponse(...arguments);
+    return super.normalize(...arguments);
   }
 }
