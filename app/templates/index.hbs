@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center flex-column align-items-center">
+  {{#each model.repositories as |repo|}}
+    <RepoBox @name={{repo.name}} @open={{repo.open_issues}}/>
+  {{/each}}
+</div>
+{{outlet}}

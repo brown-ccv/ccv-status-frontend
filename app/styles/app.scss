@@ -6,3 +6,28 @@
   @extend .align-items-center;
   height: 50vh;
 }
+
+.repo-box {
+  @extend .alert;
+  @extend .alert-light;
+  @extend .text-dark;
+  @extend .w-50;
+  @extend .p-3;
+  @extend .h5;
+  @extend .mb-1;
+  @extend .d-flex;
+  @extend .justify-content-between;
+  @extend .align-items-center;
+  border-right: 1px solid #d3d3d3 !important;
+  border-top: 1px solid #d3d3d3 !important;
+  border-bottom: 1px solid #d3d3d3 !important;
+  border-width: 5px;
+}
+
+.color-success {
+  color: $green;
+}
+
+.color-danger {
+  color: $red;
+}
