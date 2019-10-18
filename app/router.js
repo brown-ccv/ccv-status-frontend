@@ -7,6 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-  this.route('history');
+  this.route('history', function() {
+    this.route('service', { path: '/:repository_name' });
+  });
 });
-  

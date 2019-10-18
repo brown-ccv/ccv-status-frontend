@@ -1,6 +1,7 @@
 <div ...attributes class="incident">
   {{#each @issues as |incident|}}
   {{#if (eq incident.state "open")}}
+  {{incident.repo}}
   <div  class="pr-5">
     <div class="d-flex flex-row ml-2 mt-1">
       <span><FaIcon @icon="clock" class="mr-2"/></span>

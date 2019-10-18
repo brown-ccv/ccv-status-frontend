@@ -1,0 +1,7 @@
+{{model.name}}
+<div>
+  {{#each model.issues as |issue|}}
+  <p>{{issue.title}}</p>
+  <p>{{markdown-to-html issue.body}}</p>
+  {{/each}}
+</div>

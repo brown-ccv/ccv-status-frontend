@@ -1,4 +1,14 @@
-<div class="d-flex justify-content-center flex-column align-items-center">
-  <p>past incidents will go here</p>
+<div class="d-flex mt-5 font-weight-bold h5">
+  <BsNavbar @backgroundColor="white" as |navbar|>
+    <navbar.content>
+      <navbar.nav as |nav|>
+        {{#each model.repositories as |repo|}}
+        <nav.item>
+          <nav.linkTo @route="history.service" @model={{repo.name}}>{{repo.name}}</nav.linkTo>
+        </nav.item>
+        {{/each}}
+      </navbar.nav>
+    </navbar.content>
+  </BsNavbar>
 </div>
 {{outlet}}

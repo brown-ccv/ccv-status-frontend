@@ -5,7 +5,6 @@ export default class IncidentComponent extends Component {
     let incidentType
     this.args.issues.map((issues) => {
       issues.labels.map((label) => {
-        console.log(label)
         if (label.name === 'scheduled maintanance') {
           incidentType = 'scheduled'
         }
