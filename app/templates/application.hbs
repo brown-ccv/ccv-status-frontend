@@ -1,6 +1,9 @@
-<div class="hero d-flex flex-column">
+<CcvNav />
+<div class="hero">
+{{inline-svg "images/ccv-logo" class="hero-art"}}
+</div>
+<div class="heading d-flex flex-column">
   <h1>{{model.name}}</h1>
-  <div class="d-flex mt-5 font-weight-bold h5 w-50">
     <BsNavbar @backgroundColor="white" as |navbar|>
       <navbar.content>
         <navbar.nav as |nav|>
@@ -13,7 +16,6 @@
         </navbar.nav>
       </navbar.content>
     </BsNavbar>
-  </div>
 </div>
 
 {{outlet}}

@@ -1,0 +1,24 @@
+<BsNavbar as |navbar|>
+  <div class="navbar-header">
+     {{navbar.toggle}}
+     <a class="navbar-brand" href="https://www.brown.edu">
+       {{inline-svg "images/brown-logo" class="brown-logo"}}
+     </a>
+     <a class="navbar-brand" href="https://ccv.brown.edu">
+       {{inline-svg "images/ccv-logo" class="logo"}}
+     </a>
+  </div>
+  <navbar.content class="main-nav">
+    <navbar.nav as |nav|>
+      <nav.item>
+        <a class="navbar-brand" href="https://ccv.brown.edu">ccv.brown.edu</a>
+      </nav.item>
+      <nav.item>
+        <a class="navbar-brand" href="https://ccv.brown.edu/documentation/">Documentation</a>
+      </nav.item>
+      <nav.item>
+        <a class="navbar-brand" href="https://ask.cyberinfrastructure.org/c/brown-research-computing">Discourse</a>
+      </nav.item>
+    </navbar.nav>
+  </navbar.content>
+</BsNavbar>

@@ -1,10 +1,23 @@
+$blue:    #003C71; // #064CDB;
+$indigo:  #003C71 !default; //#6610f2 !default;
+$purple:  #8A3FF6;
+$pink:    #e83e8c !default;
+$red:     #C00404 !default; // #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #FFC72C !default; // #ffc107 !default;
+$green:   #00B398 !default; // #28a745 !default;
+$teal:    #00B398 !default; // #20c997 !default;
+$cyan:    #59CBE8 !default; // #17a2b8 !default;
+$brown:   #4E3629 !default;
+$sand:    #CCC6B8 !default;
+$beige:   #EFECE5 !default;
 @import "ember-bootstrap/bootstrap";
 
-.hero {
+.heading {
   @extend .d-flex;
   @extend .justify-content-center;
   @extend .align-items-center;
-  height: 30vh;
+  @extend .p-4;
 }
 
 .repo-box {
@@ -51,14 +64,10 @@
   @extend .my-2;
 }
 
-.navbar {
-  @extend .w-100;
-}
-
 .navbar-nav {
   @extend .w-100;
   @extend .d-flex;
-  @extend .justify-content-center;
+  @extend .justify-content-around;
 }
 
 .navbar-nav > li {
@@ -67,12 +76,42 @@
 }
 
 .navbar-nav .active a::after {
-  border-bottom: 2px solid $secondary;
-  bottom: -2px;
+  border-bottom: 1px solid $primary;
+  bottom: 0;
   content: " ";
   left: 0;
   position: absolute;
   right: 0;
+}
+
+.repo-nav a {
+  @extend .border;
+  @extend .rounded;
+  @extend .m-2;
+}
+
+.repo-nav .active {
+  border-color: $primary !important;
+}
+
+.repo-nav a::after {
+  border-bottom: none !important;
+}
+
+.navbar-nav .active {
+  color: $primary !important;
+}
+
+.main-nav {
+  ul {
+    display: flex !important;
+    justify-content: end !important;
+    a {
+      @extend .ml-4;
+      font-size: 0.9rem;
+      color: $primary !important;
+    }
+  }
 }
 
 .issue-line {
@@ -80,4 +119,48 @@
   @extend .flex-row;
   @extend .ml-2;
   @extend .pl-3;
+}
+
+.brown-logo {
+  height: 3rem;
+}
+.logo {
+  height: 2.2rem;
+  z-index: 100;
+  .c1 {
+    fill: $yellow;
+  }
+  .c2 {
+    fill: $green;
+  }
+  .v {
+    fill: $yellow;
+  }
+}
+
+.hero-art {
+  position: absolute;
+  height: 35%;
+  .c1 {
+    stroke: $yellow;
+    stroke-width: 3px;
+    fill: none;
+  }
+  .c2 {
+    stroke: $green;
+    stroke-width: 3px;
+    fill: none;
+  }
+  .v {
+    stroke: $yellow;
+    stroke-width: 3px;
+    fill: none;
+  }
+}
+
+.hero {
+  height: 36vh;
+  background-color: $beige;
+  @extend .d-flex;
+  @extend .justify-content-center;
 }

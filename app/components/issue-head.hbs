@@ -1,9 +1,13 @@
-<div class="d-flex flex-column ml-2 my-3 bg-light  p-3 ">
+<div class="issue-line d-flex flex-column ml-2 my-3 bg-light p-2 ">
   {{#if @withName}}
-  <h6 class="issue-line font-weight-bold text-capitalize">{{@withName}}</h6>
+  <h6 class="font-weight-bold text-capitalize">
+    <span><FaIcon @icon="calendar" @prefix="far" class="mr-2"/></span>
+    {{@withName}} –
+    {{moment-format @issue.created_at 'DD MMM, YYYY'}}
+    </h6>
   {{/if}}
   <div class="d-flex flex-row align-items-center">
-  <FaIcon @icon="clock" class="mr-2"/>
-  <span><span class="font-weight-bold mb-3">{{@issue.title}}</span> – {{@issue.created_at}}</span>
-</div>
+    <FaIcon @icon="clock" class="mr-2"/>
+    <span><span class="font-weight-bold mb-3">{{@issue.title}}</span> – {{@issue.created_at}}</span>
+  </div>
 </div>
