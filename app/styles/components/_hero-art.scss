@@ -1,0 +1,188 @@
+.hero {
+  height: 36vh;
+  background-color: #072f2f;
+  @extend .d-flex;
+  @extend .justify-content-center;
+}
+
+.hero-art {
+  position: absolute;
+  padding: 2rem;
+  height: 35%;
+  .c1 {
+    stroke: $yellow;
+    stroke-width: 3px;
+    fill: none;
+    -webkit-filter: drop-shadow( 1px 1px 4px $yellow);
+    filter: drop-shadow( 1px 1px 4px $yellow);
+  }
+  .c2 {
+    stroke: $green;
+    stroke-width: 3px;
+    fill: none;
+    -webkit-filter: drop-shadow( 1px 1px 4px $green);
+    filter: drop-shadow( 1px 1px 4px $green);
+  }
+  .v {
+    stroke: $yellow;
+    stroke-width: 3px;
+    fill: none;
+    -webkit-filter: drop-shadow( 1px 1px 4px $yellow);
+    filter: drop-shadow( 1px 1px 4px $yellow);
+  }
+
+}
+
+.active {
+  .hero-art {
+    .c2 {
+      animation: flicker 5s linear infinite;
+    }
+    .box  {
+      animation: box-flicker 4s linear infinite;
+    }
+    .box-2 {
+      animation: box-flicker-2 3s linear infinite;
+    }
+  }
+}
+
+
+@keyframes flicker {
+  0% {
+    opacity:0.1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  2% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  8% {
+    opacity:0.1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  9% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  12% {
+    opacity:0.1;
+    box-shadow: 0px 0px rgba(242, 22, 22, 1);
+  }
+  20% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  25% {
+    opacity:0.3;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  30% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+
+  70% {
+    opacity:0.7;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+
+  72% {
+    opacity:0.2;
+    box-shadow:0px 0px 29px rgba(242, 22, 22, 1)
+  }
+
+  77% {
+    opacity:.9;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  100% {
+    opacity:.9;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+}
+
+@keyframes box-flicker {
+  0% {
+    opacity:0.1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  2% {
+    opacity:0.1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  4% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+
+  19% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  21% {
+    opacity:0.1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  23% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  80% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  83% {
+    opacity:0.4;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  87% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+}
+
+@keyframes box-flicker-2 {
+  0% {
+    opacity:0.1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  2% {
+    opacity:0.1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  4% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+
+  19% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  21% {
+    opacity:0.1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  23% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  80% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  83% {
+    opacity:0.4;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  87% {
+    opacity:1;
+    box-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+}

@@ -1,9 +1,6 @@
 <CcvNav />
-<div class="hero">
-{{inline-svg "images/ccv-logo" class="hero-art"}}
-</div>
+<HeroArt @repos={{model.repositories}}/>
 <div class="heading d-flex flex-column">
-  <h1>{{model.name}}</h1>
     <BsNavbar @backgroundColor="white" as |navbar|>
       <navbar.content>
         <navbar.nav as |nav|>
