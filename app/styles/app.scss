@@ -74,3 +74,10 @@
   position: absolute;
   right: 0;
 }
+
+.issue-line {
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .ml-2;
+  @extend .pl-3;
+}

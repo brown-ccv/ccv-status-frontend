@@ -3,6 +3,7 @@ import Component from '@glimmer/component';
 export default class RepoBoxComponent extends Component {
   get statusClass() {
     let statusClass
+    console.log(this.args.open)
     if (this.args.open === 0) {
       statusClass = { border: 'border-success',
       fa: 'check',

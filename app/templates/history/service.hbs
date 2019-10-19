@@ -1,7 +1,3 @@
-{{model.name}}
-<div>
-  {{#each model.issues as |issue|}}
-  <p>{{issue.title}}</p>
-  <p>{{markdown-to-html issue.body}}</p>
-  {{/each}}
+<div class="d-flex justify-content-center flex-column align-items-center">
+  <Incident @issues={{model.issues}} @state="closed"/>
 </div>

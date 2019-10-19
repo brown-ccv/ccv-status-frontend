@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
   {{#each model.repositories as |repo|}}
-    <RepoBox @name={{repo.name}} @open={{repo.open_issues}} @issues={{repo.issues}}/>
-    {{#if (gt repo.open_issues 0)}}
-    <Incident @issues={{repo.issues}} />
+    <RepoBox @name={{repo.name}} @open={{repo.open_issues_count}} @issues={{repo.issues}}/>
+    {{#if (gt repo.open_issues_count 0)}}
+    <Incident @issues={{repo.issues}} @state="open" />
     {{/if}}
   {{/each}}
 </div>

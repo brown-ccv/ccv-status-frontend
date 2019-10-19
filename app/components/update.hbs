@@ -1,0 +1,9 @@
+{{#each @issue.notes as |note|}}
+<div class="issue-line">
+  <span><FaIcon @icon="comment" class="mr-2"/></span>
+  <span class="d-flex mr-2">
+    <span class="color-primary font-weight-bold mr-2">[Update]</span>
+    <span>{{markdown-to-html note.body}}</span>
+  </span>
+</div>
+{{/each}}

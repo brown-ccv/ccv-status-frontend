@@ -1,40 +1,20 @@
 <div ...attributes class="incident">
+  <div class="pr-5">
   {{#each @issues as |incident|}}
-  {{#if (eq incident.state "open")}}
+  {{#if (eq incident.state @state)}}
   {{incident.repo}}
-  <div  class="pr-5">
-    <div class="d-flex flex-row ml-2 mt-1">
-      <span><FaIcon @icon="clock" class="mr-2"/></span>
-      <span class="mb-3"><span class="font-weight-bold">{{incident.title}}</span> – {{incident.created_at}}</span>
-    </div>
+    <IssueHead @issue={{incident}} @withName={{@withName}}/>
     {{#if (eq this.incidentType "scheduled")}}
-    <div class="d-flex flex-row ml-2">
-      <span><FaIcon @icon="cogs" @prefix="far" class="mr-2"/></span>
-      <span class="d-flex">
-        <span class="color-primary font-weight-bold mr-2">[Maintanance]</span>
-        <span>{{markdown-to-html incident.body}}</span>
-      </span>
-    </div>
-      {{else}}
-    <div class="d-flex flex-row ml-2">
-      <span><FaIcon @icon="glasses" class="mr-2"/></span>
-      <span class="d-flex">
-        <span class="color-warning font-weight-bold mr-2">[Investigating]</span>
-        <span>{{markdown-to-html incident.body}}</span>
-      </span>
-    </div>
-    {{#each incident.notes as |note|}}
-    <div class="d-flex flex-row ml-2">
-      <span><FaIcon @icon="comment" class="mr-2"/></span>
-      <span class="d-flex mr-2">
-        <span class="color-primary font-weight-bold mr-2">[Update]</span>
-        <span>{{markdown-to-html note.body}}</span>
-    </span>
-    </div>
-    {{/each}}
+    <Scheduled @issue={{incident}} />
+    {{else}}
+    <Investigating @issue={{incident}} />
+    <Update @issue={{incident}} />
+    {{#if (eq @state "closed")}}
+      <Resolved @issue={{incident}} />
     {{/if}}
-  </div>
+    {{/if}}
   {{/if}}
   {{/each}}
 </div>
-{{yield}}
+
+</div>

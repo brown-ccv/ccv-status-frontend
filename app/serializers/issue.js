@@ -10,7 +10,7 @@ export default class IssueSerializer extends ApplicationSerializer.extend(DS.Emb
     payload.links = {
       notes: payload.comments_url
     }
-    
+
     return super.normalize(...arguments);
   }
 
