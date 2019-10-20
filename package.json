@@ -21,6 +21,7 @@
     "@ember/edition-utils": "^1.1.1",
     "@ember/optional-features": "^1.0.0",
     "@fortawesome/ember-fontawesome": "^0.2.1",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/pro-light-svg-icons": "^5.11.2",
     "@fortawesome/pro-regular-svg-icons": "^5.11.2",
