@@ -29,11 +29,10 @@ jobs:
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@master
       env:
-        baseURL: '/ccv-status-frontend/'
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         GH_USER: ${{ secrets.GH_USER }}
         ACCESS_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: dist # The folder the action should deploy.
-        BUILD_SCRIPT: npm install && ember build # The build script the action should run prior to deploying.
+        BUILD_SCRIPT: npm install && ember build --environment production # The build script the action should run prior to deploying.

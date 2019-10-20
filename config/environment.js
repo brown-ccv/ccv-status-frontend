@@ -49,6 +49,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.baseURL = '/ccv-ember-frontend/'
     // here you can enable a production-specific feature
   }
 
