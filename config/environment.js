@@ -24,8 +24,8 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    GITHUB_USER: process.env.GITHUB_USER,
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN
+    GH_USER: process.env.GH_USER,
+    GH_TOKEN: process.env.GH_TOKEN
   };
 
   if (environment === 'development') {
