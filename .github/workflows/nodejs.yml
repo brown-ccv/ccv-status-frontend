@@ -21,12 +21,13 @@ jobs:
         npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && \
         npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
         npm install
-        ember build --environment production
+        npm build --if-present
       env:
         CI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         GH_USER: ${{ secrets.GH_USER }}
     - name: Build and Deploy
+      uses: actions/setup-node@v1
       uses: JamesIves/github-pages-deploy-action@master
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -35,4 +36,4 @@ jobs:
         BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: dist # The folder the action should deploy.
-        BUILD_SCRIPT: npm install && ember build --environment production # The build script the action should run prior to deploying.
+        BUILD_SCRIPT: npm install && npm run build:production # The build script the action should run prior to deploying.
