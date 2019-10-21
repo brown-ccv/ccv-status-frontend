@@ -1,8 +1,8 @@
 {
-  "name": "ember-github-adapter",
+  "name": "CCV Status Page Ember App",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for ember-github-adapter goes here",
+  "description": "Frontend ember app for CCV Status Page, using GitHub API as backend.",
   "repository": "",
   "license": "MIT",
   "author": "",
