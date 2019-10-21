@@ -11,10 +11,10 @@
 }
 
 .repo-box {
+  @extend .container-fluid;
   @extend .alert;
   @extend .alert-light;
   @extend .text-dark;
-  @extend .w-50;
   @extend .p-3;
   @extend .h5;
   @extend .mb-1;
@@ -25,6 +25,30 @@
   border-top: 1px solid #d3d3d3 !important;
   border-bottom: 1px solid #d3d3d3 !important;
   border-width: 5px;
+  width: 90%;
+}
+
+.navbar-header {
+  @extend .d-flex;
+  @extend .justify-content-between;
+  @extend .w-100;
+}
+
+@media only screen and (min-width: 600px) {
+ .repo-box {
+   width: 60%;
+ }
+ .incident {
+   width: 55%;
+ }
+ .navbar-header {
+   @extend .d-flex;
+   @extend .justify-content-between;
+   width: 50% !important;
+ }
+ .repo-nav .nav-item {
+   width: 25% !important;
+ }
 }
 
 .color-success {
@@ -48,11 +72,11 @@
   @extend .d-flex;
   @extend .flex-column;
   @extend .justify-content-start;
-  @extend .w-50;
   @extend .border-left;
-  margin-left: 6rem;
+  margin-left: 2rem;
   @extend .my-2;
 }
+
 
 .navbar-nav {
   @extend .w-100;
@@ -75,22 +99,41 @@
   right: 0;
 }
 
-.repo-nav a {
+.navbar-nav {
+  @extend .w-100;
+  @extend .d-flex;
+  @extend .flex-wrap;
+  @extend .flex-row;
+}
+
+.navbar-nav > li {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+.repo-nav .nav-item {
+  width: 48%;
+}
+
+
+.repo-nav-item a {
   @extend .border;
   @extend .rounded;
   @extend .m-2;
   font-size: 1rem !important;
+  @extend .d-flex;
+  @extend .justify-content-center;
 }
 
-.repo-nav .active {
+.repo-nav-item .active {
   border-color: $primary !important;
 }
 
-.repo-nav a::after {
+.repo-nav-item a::after {
   border-bottom: none !important;
 }
 
-.navbar-nav .active {
+.navbar-nav-item .active {
   color: $primary !important;
 }
 
@@ -105,6 +148,8 @@
     }
   }
 }
+
+
 
 .issue-line {
   @extend .d-flex;

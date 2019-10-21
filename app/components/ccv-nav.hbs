@@ -1,12 +1,14 @@
 <BsNavbar as |navbar|>
   <div class="navbar-header">
      {{navbar.toggle}}
-     <a class="navbar-brand" href="https://www.brown.edu">
-       {{inline-svg "images/brown-logo" class="brown-logo"}}
-     </a>
-     <a class="navbar-brand" href="https://ccv.brown.edu">
-       {{inline-svg "images/ccv-logo" class="logo"}}
-     </a>
+     <div>
+       <a class="navbar-brand" href="https://www.brown.edu">
+         {{inline-svg "images/brown-logo" class="brown-logo"}}
+       </a>
+       <a class="navbar-brand" href="https://ccv.brown.edu">
+         {{inline-svg "images/ccv-logo" class="logo"}}
+       </a>
+     </div>
   </div>
   <navbar.content class="main-nav">
     <navbar.nav as |nav|>

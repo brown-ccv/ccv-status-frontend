@@ -1,10 +1,10 @@
 <div class="w-100 d-flex justify-content-center">
-  <BsNavbar @backgroundColor="white" as |navbar|>
-    <navbar.content>
+  <BsNavbar @backgroundColor="white" class="repo-nav" as |navbar|>
+    <navbar.content @collapsed={{false}}>
       <navbar.nav as |nav|>
         {{#each model as |repo|}}
         <nav.item>
-          <div class="repo-nav"><nav.linkTo @route="history.service" @model={{repo.name}}>{{repo.name}}</nav.linkTo></div>
+          <div class="repo-nav-item"><nav.linkTo @route="history.service" @model={{repo.name}}>{{repo.name}}</nav.linkTo></div>
         </nav.item>
         {{/each}}
       </navbar.nav>

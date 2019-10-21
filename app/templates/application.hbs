@@ -1,8 +1,8 @@
 <CcvNav />
 <HeroArt @repos={{model.repositories}}/>
 <div class="heading d-flex flex-column">
-    <BsNavbar @backgroundColor="white" as |navbar|>
-      <navbar.content>
+    <BsNavbar @backgroundColor="white" @collapsed=false as |navbar|>
+      <navbar.content @collapsed={{false}}>
         <navbar.nav as |nav|>
           <nav.item>
             <nav.linkTo @route="index">Current Status</nav.linkTo>
