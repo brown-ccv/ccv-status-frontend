@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'ccv-status-ember',
+    modulePrefix: 'ember-github-adapter',
     environment,
     rootURL: '/',
     locationType: 'auto',
