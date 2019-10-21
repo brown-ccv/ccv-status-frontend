@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'CCV Resources Status',
+    modulePrefix: 'ccv-status-ember',
     environment,
     rootURL: '/',
     locationType: 'auto',
