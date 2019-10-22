@@ -20,7 +20,7 @@ export default class RepoBoxComponent extends Component {
         console.log(issueLabels)
         if (issueLabels.includes('scheduled maintanance')) {
           statusClass = { border: 'border-primary',
-          fa: 'clock',
+          fa: 'wrench',
           faColor: 'color-primary',
           text: 'Scheduled Maintanance' }
         }
@@ -34,7 +34,7 @@ export default class RepoBoxComponent extends Component {
           statusClass = { border: 'border-danger',
           fa: 'times',
           faColor: 'color-danger',
-          text: 'Full Disruption' }
+          text: 'Major Disruption' }
         }
       }
 
