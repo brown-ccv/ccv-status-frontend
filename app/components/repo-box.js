@@ -13,11 +13,9 @@ export default class RepoBoxComponent extends Component {
     let issueLabels = []
     this.args.issues.map((issue) => {
       if (!issue.closed_at) {
-        console.log(issue.title)
         issue.labels.map((label) => {
           issueLabels.push(label.name)
         })
-        console.log(issueLabels)
         if (issueLabels.includes('scheduled maintanance')) {
           statusClass = { border: 'border-primary',
           fa: 'wrench',
