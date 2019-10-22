@@ -3,7 +3,6 @@ import Component from '@glimmer/component';
 export default class RepoBoxComponent extends Component {
   get statusClass() {
     let statusClass
-    console.log(this.args.open)
     if (this.args.open === 0) {
       statusClass = { border: 'border-success',
       fa: 'check',
@@ -11,27 +10,37 @@ export default class RepoBoxComponent extends Component {
       text: 'Operational' }
     }
 
+    let issueLabels = []
     this.args.issues.map((issue) => {
-      issue.labels.map((label) => {
-        if (label.name === 'scheduled maintanance') {
+      if (!issue.closed_at) {
+        console.log(issue.title)
+        issue.labels.map((label) => {
+          issueLabels.push(label.name)
+        })
+        console.log(issueLabels)
+        if (issueLabels.includes('scheduled maintanance')) {
           statusClass = { border: 'border-primary',
           fa: 'clock',
           faColor: 'color-primary',
           text: 'Scheduled Maintanance' }
         }
-        if (label.name === 'partial disruption') {
+        if (issueLabels.includes('partial disruption')) {
           statusClass = { border: 'border-warning',
           fa: 'exclamation',
           faColor: 'color-warning',
           text: 'Partial Disruption' }
         }
-        if (label.name === 'full disruption') {
+        if (issueLabels.includes('disrupted')) {
           statusClass = { border: 'border-danger',
           fa: 'times',
           faColor: 'color-danger',
           text: 'Full Disruption' }
         }
-      })
+      }
+
+
+
+
     })
 
     return statusClass
