@@ -10,10 +10,6 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x]
-    env:
-      CI: true
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      GH_USER: ${{ secrets.GH_USER }}
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -23,14 +19,18 @@ jobs:
     - name: npm install, build
       run: |
         npm install
-        npm run build:production --if-present
+        npm run build:production
+      env:
+        CI: true
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_USER: ${{ secrets.GH_USER }}
     - name: Set Up gcloud and upload
       uses: exelban/gcloud@master
       env:
         PROJECT_ID: ${{secrets.PROJECT_ID}}
         APPLICATION_CREDENTIALS: ${{secrets.APPLICATION_CREDENTIALS}}
       with:
-        entrypoint: /.github/workflows/entrypoint.sh
+        entrypoint: "/.github/workflows/entrypoint.sh"
         args:
           - "mv"
           - "./dist/*"
