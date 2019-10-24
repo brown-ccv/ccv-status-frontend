@@ -14,7 +14,7 @@ jobs:
       CI: true
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       GH_USER: ${{ secrets.GH_USER }}
-      PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
+      PROJECT_ID: ${{secrets.PROJECT_ID}}
       APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
     steps:
     - uses: actions/checkout@v1
