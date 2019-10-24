@@ -31,7 +31,4 @@ jobs:
         APPLICATION_CREDENTIALS: ${{secrets.APPLICATION_CREDENTIALS}}
       with:
         entrypoint: "/.github/workflows/entrypoint.sh"
-        args:
-          - "mv"
-          - "./dist/*"
-          - "gs://ccvstatus-brown-edu"
+        args: ["mv", "../dist/*", "gs://ccvstatus-brown-edu"]
