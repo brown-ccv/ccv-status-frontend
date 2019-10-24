@@ -15,7 +15,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       GH_USER: ${{ secrets.GH_USER }}
       PROJECT_ID: ${{secrets.PROJECT_ID}}
-      APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+      APPLICATION_CREDENTIALS: ${{secrets.APPLICATION_CREDENTIALS}}
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -31,5 +31,5 @@ jobs:
     - name: Google Storage upload
       run: |
         npm install
-        npm run build
+        npm run build:production
         gsutil mv ./dist/* gs://ccvstatus-brown-edu
