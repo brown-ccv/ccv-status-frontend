@@ -24,13 +24,14 @@ jobs:
       run: |
         npm install
         npm run build --if-present
-    - name: Set Up gcloud
+    - name: Set Up gcloud and upload
       uses: exelban/gcloud@master
       env:
         PROJECT_ID: ${{secrets.PROJECT_ID}}
         APPLICATION_CREDENTIALS: ${{secrets.APPLICATION_CREDENTIALS}}
-    - name: Google Storage upload
-      run: |
-        npm install
-        npm run build:production
-        gsutil mv ./dist/* gs://ccvstatus-brown-edu
+      with:
+        entrypoint: /.github/workflows/entrypoint.sh
+        args:
+          - "mv"
+          - "./dist/*"
+          - "gs://ccvstatus-brown-edu"
