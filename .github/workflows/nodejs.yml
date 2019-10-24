@@ -10,13 +10,13 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x]
+    env:
+      CI: true
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_USER: ${{ secrets.GH_USER }}
+      PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
+      APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
     steps:
-      env:
-        CI: true
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        GH_USER: ${{ secrets.GH_USER }}
-        PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
-        APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
