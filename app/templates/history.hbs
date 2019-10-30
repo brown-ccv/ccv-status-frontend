@@ -2,7 +2,7 @@
   <BsNavbar @backgroundColor="white" class="repo-nav" as |navbar|>
     <navbar.content @collapsed={{false}}>
       <navbar.nav as |nav|>
-        {{#each model as |repo|}}
+        {{#each model.repos as |repo|}}
         <nav.item>
           <div class="repo-nav-item"><nav.linkTo @route="history.service" @model={{repo.name}}>{{repo.name}}</nav.linkTo></div>
         </nav.item>

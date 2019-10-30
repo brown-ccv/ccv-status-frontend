@@ -1,7 +1,3 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
-  {{#each model as |repo|}}
-  <Incident @issues={{repo.issues}} @state="closed" @withName={{repo.name}}/>
-  {{/each}}
+  <PastIncident @issues={{model.issues}}/>
 </div>
-
-{{outlet}}

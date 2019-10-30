@@ -3,10 +3,11 @@ import DS from 'ember-data';
 
 export default class IssueSerializer extends ApplicationSerializer.extend(DS.EmbeddedRecordsMixin) {
   attrs = {
-    labels: { embedded: 'always' },
+    labels: { embedded: 'always' }
   }
 
   normalize(type, payload) {
+    payload.repo_name = payload.repository_url.split('/').slice(-1)[0],
     payload.links = {
       notes: payload.comments_url
     }
