@@ -34,11 +34,11 @@ jobs:
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: dist # The folder the action should deploy.
         BUILD_SCRIPT: npm install && npm run build:production # The build script the action should run prior to deploying.
-    - uses: exelban/gcloud@master
-    - name: Google Storage upload
+    - name: Set Up gcloud and upload
+      uses: exelban/gcloud@master
       env:
         PROJECT_ID: ${{secrets.PROJECT_ID}}
         APPLICATION_CREDENTIALS: ${{secrets.APPLICATION_CREDENTIALS}}
-      run: |
-        npm run build
-        gsutil mv ./dist/* gs://ccvstatus-brown-edu
+      with:
+        entrypoint: ".github/workflows/entrypoint.sh"
+        args: "mv dist/* gs://ccvstatus-brown-edu"
