@@ -1,0 +1,24 @@
+<div class="incident">
+  <div class="pr-5">
+    {{#each-in (group-by "date" @issues) as |date incidents|}}
+      <h4 class="pl-4">{{date}}</h4>
+      {{#each (sort-by "closed_at:desc" incidents)  as |issue|}}
+        {{#if (eq issue.state "closed")}}
+          <IssueHead @issue={{issue}}/>
+          <Investigating @issue={{issue}} />
+          <Update @issue={{issue}} />
+          <Resolved @issue={{issue}} />
+          <br>
+        {{else}}
+        <LinkTo @route="index">
+         <p class="issue-line d-flex align-items-center">
+          <FaIcon @icon="exclamation-triangle" @prefix="fas" class="mr-2 text-warning"/>
+          <span>open: {{issue.title}}</span>
+        </p>
+        </LinkTo>
+        {{/if}}
+      {{/each}}
+    {{/each-in}}
+  </div>
+
+</div>

@@ -3,8 +3,8 @@ import Component from '@glimmer/component';
 export default class IncidentComponent extends Component {
   get incidentType() {
     let incidentType
-    this.args.issues.map((issues) => {
-      issues.labels.map((label) => {
+    this.args.issues.map((issue) => {
+      issue.labels.map((label) => {
         if (label.name === 'scheduled maintanance') {
           incidentType = 'scheduled'
         }

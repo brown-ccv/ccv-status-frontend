@@ -9,7 +9,14 @@ export default class IssueModel extends Model {
   @attr('date') created_at;
   @attr('date') updated_at;
   @attr('date') closed_at;
+  @attr() repo_name;
   @hasMany() notes;
   @hasMany() labels;
   @belongsTo() repository;
+
+  get date() {
+    return new Intl.DateTimeFormat('en-US', {
+         year: 'numeric', month: 'long', day: 'numeric'
+       }).format(this.created_at)
+     }
 }
