@@ -37,8 +37,8 @@ jobs:
     - uses: exelban/gcloud@master
     - name: Google Storage upload
       env:
-        PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
-        APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        PROJECT_ID: ${{secrets.PROJECT_ID}}
+        APPLICATION_CREDENTIALS: ${{secrets.APPLICATION_CREDENTIALS}}
       run: |
         npm run build
         gsutil mv ./dist/* gs://ccvstatus-brown-edu
