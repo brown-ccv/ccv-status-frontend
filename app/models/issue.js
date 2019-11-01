@@ -15,7 +15,7 @@ export default class IssueModel extends Model {
   @belongsTo() repository;
 
   get date() {
-   return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat('en-US', {
          year: 'numeric', month: 'long', day: 'numeric'
        }).format(this.created_at)
      }
