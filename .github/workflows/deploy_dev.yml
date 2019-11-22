@@ -32,7 +32,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         GH_USER: ${{ secrets.GH_USER }}
         ACCESS_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        BASE_BRANCH: master # The branch the action should deploy from.
+        BASE_BRANCH: develop # The branch the action should deploy from.
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: dist # The folder the action should deploy.
         BUILD_SCRIPT: npm install && npm run build:development # The build script the action should run prior to deploying.
