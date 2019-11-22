@@ -29,6 +29,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.rootURL = '/ccv-status-frontend/'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -49,7 +50,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/ccv-status-frontend/'
     // here you can enable a production-specific feature
   }
 
