@@ -1,7 +1,9 @@
 name: Node CI
 
-on: [push]
-
+on:
+  push:
+    branches:
+      - develop
 jobs:
   build:
 
@@ -33,12 +35,4 @@ jobs:
         BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: dist # The folder the action should deploy.
-        BUILD_SCRIPT: npm install && npm run build:production # The build script the action should run prior to deploying.
-    - name: Set Up gcloud and upload
-      uses: exelban/gcloud@master
-      env:
-        PROJECT_ID: ${{secrets.PROJECT_ID}}
-        APPLICATION_CREDENTIALS: ${{secrets.APPLICATION_CREDENTIALS}}
-      with:
-        entrypoint: ".github/workflows/entrypoint.sh"
-        args: "mv dist/* gs://ccvstatus-brown-edu"
+        BUILD_SCRIPT: npm install && npm run build:development # The build script the action should run prior to deploying.
