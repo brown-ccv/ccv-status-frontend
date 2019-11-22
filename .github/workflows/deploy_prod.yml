@@ -1,0 +1,41 @@
+name: Node CI
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build
+      run: |
+        npm install
+        npm run build --if-present
+      env:
+        CI: true
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_USER: ${{ secrets.GH_USER }}
+    - name: Build Production
+      run: npm run build:production
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_USER: ${{ secrets.GH_USER }}
+    - name: Set Up gcloud and upload
+      uses: exelban/gcloud@master
+      env:
+        PROJECT_ID: ${{secrets.PROJECT_ID}}
+        APPLICATION_CREDENTIALS: ${{secrets.APPLICATION_CREDENTIALS}}
+      with:
+        entrypoint: ".github/workflows/entrypoint.sh"
+        args: "mv dist/* gs://ccvstatus.brown.edu"
