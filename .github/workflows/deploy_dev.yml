@@ -19,7 +19,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER: ${{ secrets.GH_USER }}
-      - name: Archive Production Artifact
+      - name: Archive Development Artifact
         uses: actions/upload-artifact@master
         with:
           name: dist
