@@ -31,8 +31,6 @@ export default class RepoBoxComponent extends Component {
       text: 'Major Disruption' }
     }
 
-    console.log(this.args.repo.name, statusClass);
-
     return statusClass
   }
 

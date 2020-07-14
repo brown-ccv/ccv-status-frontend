@@ -1,3 +1,7 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
-  <Incident @issues={{model.issues}} @state="closed"/>
+  {{#if model.issues }}
+    <Incident @issues={{model.issues}} @state="closed"/>
+  {{else}}
+    <h1 class="pt-5">No past incidents for <i>{{@model.name}}</i></h1>
+  {{/if}}
 </div>

@@ -28,6 +28,20 @@
   width: 90%;
 }
 
+.repo-box-left {
+  line-height: 0.3;
+  small {
+    font-size: 0.9rem;
+    color: #c3c3c3;
+  }
+}
+
+.history {
+  h1 {
+    text-align: center;
+  }
+}
+
 .navbar-header {
   @extend .d-flex;
   @extend .justify-content-between;

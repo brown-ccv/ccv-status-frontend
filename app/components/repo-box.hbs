@@ -1,5 +1,10 @@
 <div ...attributes class="repo-box {{this.statusClass.border}}" role="alert">
-  <span>{{@name}}</span>
+  <span class="repo-box-left">
+    <p>{{@name}}</p>
+    <LinkTo @route="history.service" @model={{@name}} >
+      <small>past incidents <FaIcon @icon="arrow-right"/></small>
+    </LinkTo>
+  </span>
   <span class="{{this.statusClass.faColor}}">
     <FaIcon @icon="{{this.statusClass.fa}}"/>
     &nbsp;&nbsp;{{this.statusClass.text}}

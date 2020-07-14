@@ -1,14 +1,17 @@
-<div class="w-100 d-flex justify-content-center">
-  <BsNavbar @backgroundColor="white" class="repo-nav" as |navbar|>
-    <navbar.content @collapsed={{false}}>
-      <navbar.nav as |nav|>
-        {{#each model.repos as |repo|}}
-        <nav.item>
-          <div class="repo-nav-item"><nav.linkTo @route="history.service" @model={{repo.name}}>{{repo.name}}</nav.linkTo></div>
-        </nav.item>
-        {{/each}}
-      </navbar.nav>
-    </navbar.content>
-  </BsNavbar>
+<div class="history">
+  <div class="history-content">
+    <h1>Past Incidents</h1>
+    <BsNavbar @backgroundColor="white" class="repo-nav" as |navbar|>
+      <navbar.content @collapsed={{false}}>
+        <navbar.nav as |nav|>
+          {{#each model.repos as |repo|}}
+          <nav.item>
+            <div class="repo-nav-item"><nav.linkTo @route="history.service" @model={{repo.name}}>{{repo.name}}</nav.linkTo></div>
+          </nav.item>
+          {{/each}}
+        </navbar.nav>
+      </navbar.content>
+    </BsNavbar>
+  </div>
 </div>
 {{outlet}}

@@ -1,8 +1,7 @@
 import DS from 'ember-data';
-const { Model, attr, belongsTo } = DS;
+const { Model, attr } = DS;
 
 export default class LabelModel extends Model {
-  //@belongsTo('issue') issue;
   @attr() name;
   @attr() color;
 }
