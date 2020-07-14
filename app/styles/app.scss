@@ -37,7 +37,9 @@
 }
 
 .history {
-  h1 {
+  .heading {
+    display: flex;
+    flex-direction: column;
     text-align: center;
   }
 }

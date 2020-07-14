@@ -1,6 +1,11 @@
 <div class="history">
   <div class="history-content">
+    <div class="heading">
+    <LinkTo @route="index">
+      <small><FaIcon @icon="arrow-left"/> current incidents </small>
+    </LinkTo>
     <h1>Past Incidents</h1>
+    </div>
     <BsNavbar @backgroundColor="white" class="repo-nav" as |navbar|>
       <navbar.content @collapsed={{false}}>
         <navbar.nav as |nav|>
