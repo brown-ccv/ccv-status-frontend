@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 const { Model, attr, belongsTo, hasMany } = DS;
 
 export default class IssueModel extends Model {
@@ -11,7 +12,7 @@ export default class IssueModel extends Model {
   @attr('date') closed_at;
   @attr() repo_name;
   @hasMany() notes;
-  @hasMany() labels;
+  @hasMany('label') labels;
   @belongsTo() repository;
 
   get date() {
@@ -19,4 +20,27 @@ export default class IssueModel extends Model {
          year: 'numeric', month: 'long', day: 'numeric'
        }).format(this.created_at)
      }
+  
+  @computed('labels.@each.name')
+  get worstLabelName() {
+    const labelNames = this.labels.map(label => label.name);
+    if (labelNames.includes('disrupted')) return 'disrupted';
+    if (labelNames.includes('partial disruption')) return 'partial disruption';
+    if (labelNames.includes('scheduled maintanance')) return 'scheduled maintanance';
+  }
+
+  @computed('worstLabelName')
+  get isDisrupted() {
+    return this.worstLabelName === 'disrupted';
+  }
+
+  @computed('worstLabelName')
+  get isPartialDisruption() {
+    return this.worstLabelName === 'partial disruption';
+  }
+
+  @computed('worstLabelName')
+  get isScheduledMaintanance() {
+    return this.worstLabelName === 'scheduled maintanance';
+  }
 }

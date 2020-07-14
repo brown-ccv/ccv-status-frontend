@@ -11,7 +11,7 @@ export default class IncidentComponent extends Component {
         if (label.name === 'partial disruption') {
           incidentType = 'partial'
         }
-        if (label.name === 'full disruption') {
+        if (label.name === 'disrupted') {
           incidentType = 'full'
         }
       })

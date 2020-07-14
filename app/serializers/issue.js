@@ -7,6 +7,7 @@ export default class IssueSerializer extends ApplicationSerializer.extend(DS.Emb
   }
 
   normalize(type, payload) {
+    console.log(payload.labels);
     payload.repo_name = payload.repository_url.split('/').slice(-1)[0],
     payload.links = {
       notes: payload.comments_url
