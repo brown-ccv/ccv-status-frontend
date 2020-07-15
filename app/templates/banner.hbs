@@ -5,7 +5,7 @@
         <span>We are experiencing some issues with:&nbsp;</span>
         {{#each model.repositories as |repo|}}
         {{#if (or repo.isDisruption  repo.isPartialDisruption)}}
-            <span class="repo">{{repo.name}}</span>
+            <span class="repo">{{repo.name}}&nbsp;</span>
         {{/if}}
         {{/each}}
         <span>| click here for more details</span>
@@ -22,7 +22,7 @@
         <FaIcon @icon="wrench"/>
         {{#each model.repositories as |repo|}}
         {{#if repo.isScheduledMaintanance }}
-            <span class="repo">{{repo.name}}</span>
+            <span class="repo">{{repo.name}}&nbsp;</span>
         {{/if}}
         {{/each}}
         <span>is undergoing a scheduled maintenance | click here for more details</span>
