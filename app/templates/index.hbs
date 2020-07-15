@@ -1,4 +1,7 @@
-<div class="d-flex justify-content-center flex-column align-items-center">
+<CcvNav />
+<HeroArt @repos={{model.repositories}}/>
+
+<div class="heading d-flex justify-content-center flex-column align-items-center">
   {{#each model.repositories as |repo|}}
     <RepoBox @name={{repo.name}} @open={{repo.open_issues_count}} @issues={{repo.issues}} @repo={{repo}}/>
     {{#if (gt repo.open_issues_count 0)}}
@@ -7,3 +10,4 @@
   {{/each}}
 </div>
 {{outlet}}
+<Footer />

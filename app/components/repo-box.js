@@ -12,7 +12,7 @@ export default class RepoBoxComponent extends Component {
     }
 
     
-    if (this.args.repo.isDisrupted) {
+    if (this.args.repo.isScheduledMaintanance) {
       statusClass = { border: 'border-primary',
       fa: 'wrench',
       faColor: 'color-primary',
