@@ -165,8 +165,6 @@
   }
 }
 
-
-
 .issue-line {
   @extend .d-flex;
   @extend .flex-row;
@@ -197,4 +195,21 @@
   background-color: $beige;
   padding-top: 3rem;
   padding-bottom: 2rem;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $green;
+  .link {
+    @extend .my-2;
+  }
+  .repo {
+    font-weight: bold;
+  }
+}
+
+.hidden {
+  visibility: hidden;
 }

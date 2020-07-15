@@ -10,4 +10,5 @@ Router.map(function() {
   this.route('history', function() {
     this.route('service', { path: '/:repository_name' });
   });
+  this.route('banner');
 });

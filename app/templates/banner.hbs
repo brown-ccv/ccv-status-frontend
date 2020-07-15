@@ -1,0 +1,35 @@
+    {{#if (or model.isDisruption  model.isPartialDisruption )}}
+    <div class="banner bg-danger">
+    <a class="link text-white" target="_blank" href="https://status.ccv.brown.edu" aria-label="ccv status details">
+        <FaIcon @icon="exclamation-triangle"/>
+        <span>We are experiencing some issues with:&nbsp;</span>
+        {{#each model.repositories as |repo|}}
+        {{#if (or repo.isDisruption  repo.isPartialDisruption)}}
+            <span class="repo">{{repo.name}}&nbsp;</span>
+        {{/if}}
+        {{/each}}
+        <span>| click here for more details</span>
+    </a>
+    </div>
+    {{else}}
+    <div class="banner bg-warning">
+        <p aria-hiden="true" class="hidden">hidden text</p>
+    </div>
+    {{/if}}
+    {{#if model.isScheduledMaintanance}}
+    <div class="banner bg-primary">
+    <a class="link text-white" target="_blank" href="https://status.ccv.brown.edu" aria-label="ccv scheduled maintenance details">
+        <FaIcon @icon="wrench"/>
+        {{#each model.repositories as |repo|}}
+        {{#if repo.isScheduledMaintanance }}
+            <span class="repo">{{repo.name}}&nbsp;</span>
+        {{/if}}
+        {{/each}}
+        <span>is undergoing a scheduled maintenance | click here for more details</span>
+    </a>
+    </div>
+    {{else}}
+    <div class="banner bg-warning">
+        <p aria-hiden="true" class="hidden">hidden text</p>
+    </div>
+    {{/if}}
