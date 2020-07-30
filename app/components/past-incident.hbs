@@ -5,9 +5,9 @@
       {{#each (sort-by "closed_at:desc" incidents)  as |issue|}}
         {{#if (eq issue.state "closed")}}
           <IssueHead @issue={{issue}}/>
-          <Investigating @issue={{issue}} />
-          <Update @issue={{issue}} />
           <Resolved @issue={{issue}} />
+          <Update @issue={{issue}} />
+          <Investigating @issue={{issue}} />
           <br>
         {{else}}
         <LinkTo @route="index">
