@@ -3,15 +3,15 @@
   {{#each (sort-by "created_at:desc" @issues)  as |incident|}}
     {{#if (eq incident.state @state)}}
       <IssueHead @issue={{incident}}/>
-      {{#if (eq this.incidentType "scheduled")}}
-      <Scheduled @issue={{incident}} />
-      {{else}}
-      <Investigating @issue={{incident}} />
-      <Update @issue={{incident}} />
       {{#if (eq @state "closed")}}
         <Resolved @issue={{incident}} />
         <br>
       {{/if}}
+      {{#if (eq this.incidentType "scheduled")}}
+      <Scheduled @issue={{incident}} />
+      {{else}}
+      <Update @issue={{incident}} />
+      <Investigating @issue={{incident}} />
     {{/if}}
   {{/if}}
   {{/each}}
