@@ -8,7 +8,7 @@
         <Resolved @issue={{incident}} />
         <br>
       {{/if}}
-      {{#if @repo.isScheduledMaintanance }}
+      {{#if incident.isScheduledMaintanance }}
       <Scheduled @issue={{incident}} />
       {{else}}
       <Update @issue={{incident}} />
