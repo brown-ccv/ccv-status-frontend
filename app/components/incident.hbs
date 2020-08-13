@@ -1,13 +1,14 @@
 <div ...attributes class="incident">
   <div class="pr-5">
-  {{#each (sort-by "created_at:desc" @issues)  as |incident|}}
+
+  {{#each (sort-by "created_at:desc" @repo.issues)  as |incident|}}
     {{#if (eq incident.state @state)}}
       <IssueHead @issue={{incident}}/>
       {{#if (eq @state "closed")}}
         <Resolved @issue={{incident}} />
         <br>
       {{/if}}
-      {{#if (eq this.incidentType "scheduled")}}
+      {{#if @repo.isScheduledMaintanance }}
       <Scheduled @issue={{incident}} />
       {{else}}
       <Update @issue={{incident}} />

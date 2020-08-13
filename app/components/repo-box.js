@@ -16,7 +16,7 @@ export default class RepoBoxComponent extends Component {
       statusClass = { border: 'border-primary',
       fa: 'wrench',
       faColor: 'color-primary',
-      text: 'Scheduled Maintanance' }
+      text: 'Scheduled Maintenance' }
     }
     if (this.args.repo.isPartialDisruption) {
       statusClass = { border: 'border-warning',
