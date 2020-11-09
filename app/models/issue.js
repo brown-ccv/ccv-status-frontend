@@ -24,13 +24,15 @@ export default class IssueModel extends Model {
   @computed('labels.@each.name')
   get worstLabelName() {
     const labelNames = this.labels.map(label => label.name);
-    if (labelNames.includes('disrupted')) return 'disrupted';
+    console.log(labelNames.includes('disrupted'))
     if (labelNames.includes('partial disruption')) return 'partial disruption';
     if (labelNames.includes('scheduled maintanance')) return 'scheduled maintanance';
+    if (labelNames.includes('disrupted')) return 'disrupted';
   }
 
   @computed('worstLabelName')
   get isDisrupted() {
+    console.log('is disrupted', this.worstLabelName)
     return this.worstLabelName === 'disrupted';
   }
 
